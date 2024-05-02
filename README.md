@@ -4,6 +4,18 @@
 - cudf
 - kvikio
 
+# How to create conda environment
+
+## CUDF 24.04
+```bash
+mamba create -n cudf_sandbox_24_04 -c rapidsai -c conda-forge -c nvidia python=3.10 libcudf=24.04.* libcufile=1.8.* cuda-cudart-dev=12.3.* cmake=3.29.* cuda-nvcc=12.3.*
+```
+
+## CUDF 24.02
+```bash
+mamba create -n cudf_sandbox_24_02 -c rapidsai -c conda-forge -c nvidia python=3.10 libcudf=24.02.* libcufile=1.8.* cuda-cudart-dev=12.3.* cmake=3.29.* cuda-nvcc=12.3.*
+```
+
 # How to build the program
 
 1. `mkdir build && cd build`
