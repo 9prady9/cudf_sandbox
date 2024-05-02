@@ -35,7 +35,7 @@ int main(int argc, char** argv) {
     CUDF_CUDA_TRY(cudaStreamSynchronize(0));
     std::cout << "Write Async ended up writing " << bytes_written << " bytes" << std::endl;
     if (bytes_written < 0) {
-      throw std::runtime_error(CUFILE_ERRSTR(bytes_written));
+      throw std::runtime_error(CUFILE_ERRSTR(abs(bytes_written)+CUFILEOP_BASE_ERR));
     }
   } catch (kvikio::CUfileException &e) {
     std::cout << "Error: " << e.what() << std::endl;
